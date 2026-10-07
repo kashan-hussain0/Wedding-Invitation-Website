@@ -1,0 +1,3771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saima & Hashim — Wedding Invitation</title>
+    <meta name="description" content="The wedding invitation of Saima & Hashim — 06 November 2026, Karachi.">
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+
+        /* =========================================================
+           ROOT
+        ========================================================== */
+
+        :root {
+            --ivory: #fbf7f0;
+            --paper: #fffdf9;
+            --cream: #f2e9db;
+            --champagne: #d6b47a;
+            --gold: #b88a43;
+            --gold-light: #ead4a8;
+            --wine: #672f3e;
+            --wine-dark: #321923;
+            --rose: #b8797e;
+            --brown: #6e5549;
+            --text: #30272a;
+            --muted: #877b76;
+            --white: #ffffff;
+
+            --serif: "Cormorant Garamond", serif;
+            --sans: "DM Sans", sans-serif;
+            --script: "Great Vibes", cursive;
+
+            --shadow:
+                0 25px 80px rgba(55, 30, 35, .10);
+
+            --radius-lg: 34px;
+            --radius-md: 22px;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--ivory);
+            color: var(--text);
+            font-family: var(--sans);
+            overflow-x: hidden;
+        }
+
+        body.locked {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+
+        /* =========================================================
+           SCROLL PROGRESS
+        ========================================================== */
+
+        #scrollProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(
+                90deg,
+                var(--wine),
+                var(--gold),
+                var(--rose)
+            );
+            z-index: 9999;
+        }
+
+
+        /* =========================================================
+           LOADER
+        ========================================================== */
+
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--wine-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity .8s ease, visibility .8s ease;
+        }
+
+        #loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: white;
+        }
+
+        .loader-ring {
+            width: 65px;
+            height: 65px;
+            border: 1px solid rgba(255,255,255,.25);
+            border-top-color: var(--gold-light);
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+            margin: 0 auto 25px;
+        }
+
+        .loader-script {
+            font-family: var(--script);
+            font-size: 38px;
+            color: var(--gold-light);
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =========================================================
+           INVITATION GATE
+        ========================================================== */
+
+        #invitationGate {
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(214,180,122,.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #26151c,
+                    #3a2029 50%,
+                    #211218
+                );
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        #invitationGate.open {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .gate-card {
+            width: min(500px, 100%);
+            min-height: 650px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid rgba(234,212,168,.35);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.07),
+                    rgba(255,255,255,.02)
+                );
+            backdrop-filter: blur(20px);
+            box-shadow:
+                0 40px 120px rgba(0,0,0,.45);
+            overflow: hidden;
+        }
+
+        .gate-card::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border: 1px solid rgba(234,212,168,.22);
+            pointer-events: none;
+        }
+
+        .gate-flower {
+            position: absolute;
+            font-size: 90px;
+            color: rgba(234,212,168,.07);
+        }
+
+        .gate-flower.one {
+            top: -10px;
+            left: -10px;
+            transform: rotate(-25deg);
+        }
+
+        .gate-flower.two {
+            bottom: -10px;
+            right: -10px;
+            transform: rotate(155deg);
+        }
+
+        .gate-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+        }
+
+        .gate-small {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 10px;
+            color: var(--gold-light);
+            margin-bottom: 25px;
+        }
+
+        .gate-names {
+            font-family: var(--serif);
+            font-size: clamp(55px, 12vw, 88px);
+            line-height: .82;
+            font-weight: 400;
+            color: white;
+        }
+
+        .gate-amp {
+            font-family: var(--script);
+            color: var(--gold-light);
+            font-size: 45px;
+            margin: 12px 0;
+        }
+
+        .gate-date {
+            margin-top: 30px;
+            color: rgba(255,255,255,.7);
+            letter-spacing: 4px;
+            font-size: 11px;
+        }
+
+        .enter-button {
+            margin-top: 45px;
+            border: 1px solid rgba(234,212,168,.5);
+            background: transparent;
+            color: white;
+            padding: 16px 32px;
+            cursor: pointer;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 10px;
+            transition: .4s ease;
+        }
+
+        .enter-button:hover {
+            background: var(--gold-light);
+            color: var(--wine-dark);
+            transform: translateY(-3px);
+        }
+
+        .enter-button i {
+            margin-left: 10px;
+        }
+
+
+        /* =========================================================
+           FLOATING PARTICLES
+        ========================================================== */
+
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--gold-light);
+            opacity: .5;
+            animation: floatParticle linear infinite;
+        }
+
+        @keyframes floatParticle {
+            from {
+                transform: translateY(110vh) rotate(0);
+            }
+
+            to {
+                transform: translateY(-20vh) rotate(360deg);
+            }
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================== */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            transition: .4s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(50,25,35,.94);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 10px 40px rgba(0,0,0,.12);
+        }
+
+        .nav-logo {
+            font-family: var(--serif);
+            font-size: 27px;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo span {
+            color: var(--gold-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: .8;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--gold-light);
+        }
+
+        .music-button {
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            background: rgba(255,255,255,.06);
+            color: white;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .music-button:hover {
+            background: var(--gold);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 0;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================== */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(28,13,18,.28),
+                    rgba(28,13,18,.78)
+                ),
+                url("nikkah.png") center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(
+                    circle at center,
+                    transparent 20%,
+                    rgba(20,10,15,.55) 100%
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: min(1000px, 90%);
+            padding-top: 80px;
+        }
+
+        .eyebrow {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--gold-light);
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-family: var(--serif);
+            font-size: clamp(75px, 13vw, 160px);
+            line-height: .72;
+            font-weight: 300;
+        }
+
+        .hero-title .amp {
+            font-family: var(--script);
+            font-size: .45em;
+            color: var(--gold-light);
+            display: block;
+            margin: 12px 0;
+        }
+
+        .hero-subtitle {
+            margin-top: 45px;
+            font-family: var(--serif);
+            font-size: 21px;
+            font-style: italic;
+            color: rgba(255,255,255,.82);
+        }
+
+        .hero-date {
+            margin-top: 35px;
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero-date span {
+            width: 50px;
+            height: 1px;
+            background: var(--gold-light);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            opacity: .7;
+        }
+
+        .scroll-hint i {
+            display: block;
+            margin-top: 10px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            50% {
+                transform: translateY(7px);
+            }
+        }
+
+
+        /* =========================================================
+           COMMON SECTIONS
+        ========================================================== */
+
+        section {
+            position: relative;
+            padding: 120px 6%;
+        }
+
+        .section-container {
+            width: min(1150px, 100%);
+            margin: auto;
+        }
+
+        .section-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(45px, 6vw, 75px);
+            line-height: .9;
+            font-weight: 400;
+            color: var(--wine-dark);
+        }
+
+        .section-description {
+            max-width: 650px;
+            margin-top: 25px;
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .center-heading .section-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================== */
+
+        .intro {
+            background: var(--ivory);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .intro::before {
+            content: "S";
+            position: absolute;
+            font-family: var(--serif);
+            font-size: 400px;
+            color: rgba(103,47,62,.025);
+            top: -100px;
+            left: -30px;
+        }
+
+        .intro-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .script-line {
+            font-family: var(--script);
+            color: var(--wine);
+            font-size: 48px;
+            margin-top: 25px;
+        }
+
+        .intro-quote {
+            font-family: var(--serif);
+            font-size: 25px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 35px auto 0;
+            color: var(--brown);
+        }
+
+
+        /* =========================================================
+           WEDDING PASSPORT
+        ========================================================== */
+
+        .passport-section {
+            background: var(--cream);
+        }
+
+        .passport {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            background: var(--wine-dark);
+            color: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            min-height: 480px;
+        }
+
+        .passport-main {
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .passport-main::after {
+            content: "LOVE";
+            position: absolute;
+            right: -80px;
+            bottom: -70px;
+            font-family: var(--serif);
+            font-size: 220px;
+            color: rgba(255,255,255,.025);
+        }
+
+        .passport-side {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.09),
+                    rgba(255,255,255,.02)
+                );
+            padding: 45px;
+            border-left: 1px dashed rgba(255,255,255,.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .passport-stamp {
+            width: 90px;
+            height: 90px;
+            border: 1px solid var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 35px;
+            color: var(--gold-light);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transform: rotate(-12deg);
+        }
+
+        .passport-title {
+            font-family: var(--serif);
+            font-size: 55px;
+            line-height: .9;
+            font-weight: 400;
+        }
+
+        .passport-meta {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 30px;
+        }
+
+        .meta-label {
+            color: var(--gold-light);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .meta-value {
+            font-family: var(--serif);
+            font-size: 22px;
+        }
+
+        .passport-side h3 {
+            font-family: var(--serif);
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .passport-side p {
+            color: rgba(255,255,255,.65);
+            line-height: 1.8;
+            font-size: 13px;
+        }
+
+        .passport-code {
+            margin-top: 35px;
+            height: 55px;
+            display: flex;
+            gap: 3px;
+            align-items: center;
+        }
+
+        .passport-code span {
+            height: 100%;
+            width: 3px;
+            background: rgba(234,212,168,.75);
+        }
+
+        .passport-code span:nth-child(2n) {
+            height: 70%;
+        }
+
+        .passport-code span:nth-child(3n) {
+            height: 45%;
+        }
+
+
+        /* =========================================================
+           COUNTDOWN
+        ========================================================== */
+
+        .countdown-section {
+            background: var(--wine);
+            color: white;
+            text-align: center;
+        }
+
+        .countdown-section .section-label {
+            color: var(--gold-light);
+        }
+
+        .countdown-section .section-title {
+            color: white;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 55px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            width: 125px;
+            height: 140px;
+            border: 1px solid rgba(234,212,168,.25);
+            background: rgba(255,255,255,.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .time-number {
+            font-family: var(--serif);
+            font-size: 55px;
+            color: var(--gold-light);
+            line-height: 1;
+        }
+
+        .time-label {
+            margin-top: 12px;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,.55);
+        }
+
+
+        /* =========================================================
+           EVENTS
+        ========================================================== */
+
+        .events {
+            background: var(--paper);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .event-card {
+            position: relative;
+            padding: 50px;
+            border: 1px solid rgba(103,47,62,.12);
+            background: white;
+            box-shadow: 0 20px 60px rgba(60,35,35,.05);
+            overflow: hidden;
+            transition: .5s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(60,35,35,.10);
+        }
+
+        .event-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: 0 0 0 100%;
+            background: rgba(103,47,62,.04);
+        }
+
+        .event-number {
+            font-family: var(--serif);
+            font-size: 13px;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .event-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--wine);
+            font-size: 24px;
+            margin: 30px 0;
+        }
+
+        .event-title {
+            font-family: var(--serif);
+            font-size: 43px;
+            font-weight: 400;
+        }
+
+        .event-date {
+            color: var(--wine);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 12px;
+        }
+
+        .event-info {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .event-info div {
+            margin-bottom: 9px;
+        }
+
+        .event-info i {
+            width: 22px;
+            color: var(--gold);
+        }
+
+        .direction-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            padding: 12px 18px;
+            background: var(--wine);
+            color: white;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: .3s;
+        }
+
+        .direction-btn:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           TIMELINE
+        ========================================================== */
+
+        .timeline-section {
+            background: var(--ivory);
+        }
+
+        .timeline {
+            position: relative;
+            margin-top: 70px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            background: rgba(103,47,62,.18);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 0 45px 65px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: .8s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 3px;
+            width: 14px;
+            height: 14px;
+            background: var(--wine);
+            border: 4px solid var(--ivory);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px var(--gold);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -7px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -7px;
+        }
+
+        .timeline-time {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+        }
+
+        .timeline-title {
+            font-family: var(--serif);
+            font-size: 30px;
+            margin-top: 7px;
+            color: var(--wine-dark);
+        }
+
+        .timeline-text {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+            margin-top: 7px;
+        }
+
+
+        /* =========================================================
+           BLESSINGS
+        ========================================================== */
+
+        .blessings-section {
+            background: var(--cream);
+        }
+
+        .blessing-grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+        }
+
+        .blessing-card {
+            min-height: 300px;
+            background: white;
+            border: 1px solid rgba(103,47,62,.1);
+            padding: 38px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: .4s ease;
+        }
+
+        .blessing-card:hover {
+            transform: translateY(-8px) rotate(.5deg);
+        }
+
+        .blessing-front,
+        .blessing-back {
+            transition: .5s ease;
+        }
+
+        .blessing-back {
+            position: absolute;
+            inset: 0;
+            padding: 38px;
+            background: var(--wine);
+            color: white;
+            transform: translateY(100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blessing-card.open .blessing-back {
+            transform: translateY(0);
+        }
+
+        .blessing-number {
+            font-family: var(--serif);
+            font-size: 15px;
+            color: var(--gold);
+        }
+
+        .blessing-icon {
+            margin: 35px 0 20px;
+            font-size: 28px;
+            color: var(--wine);
+        }
+
+        .blessing-title {
+            font-family: var(--serif);
+            font-size: 30px;
+        }
+
+        .blessing-hint {
+            margin-top: 20px;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .blessing-back .blessing-title {
+            color: var(--gold-light);
+            margin-bottom: 18px;
+        }
+
+        .blessing-back p {
+            font-family: var(--serif);
+            font-size: 21px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================================================
+           MEMORY WALL
+        ========================================================== */
+
+        .memory-section {
+            background: var(--wine-dark);
+            color: white;
+            overflow: hidden;
+        }
+
+        .memory-section .section-title {
+            color: white;
+        }
+
+        .memory-section .section-description {
+            color: rgba(255,255,255,.55);
+        }
+
+        .memory-wall {
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px;
+            align-items: start;
+        }
+
+        .memory-card {
+            background: #f8f3ea;
+            padding: 12px;
+            color: var(--wine-dark);
+            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+            transition: .5s ease;
+        }
+
+        .memory-card:nth-child(2) {
+            margin-top: 45px;
+            transform: rotate(2deg);
+        }
+
+        .memory-card:nth-child(3) {
+            margin-top: 10px;
+            transform: rotate(-2deg);
+        }
+
+        .memory-card:nth-child(4) {
+            margin-top: 65px;
+            transform: rotate(1deg);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-15px) rotate(0);
+        }
+
+        .memory-visual {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    rgba(255,255,255,.8),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    145deg,
+                    #ead8c0,
+                    #c99ca0,
+                    #7d4b58
+                );
+            color: rgba(255,255,255,.8);
+            font-size: 50px;
+        }
+
+        .memory-card:nth-child(2) .memory-visual {
+            background:
+                radial-gradient(circle,#fff6e2,transparent 25%),
+                linear-gradient(145deg,#a9826f,#e3b9a7,#613a47);
+        }
+
+        .memory-card:nth-child(3) .memory-visual {
+            background:
+                radial-gradient(circle,#fff8ec,transparent 25%),
+                linear-gradient(145deg,#c9b18a,#8e5360,#3d2630);
+        }
+
+        .memory-card:nth-child(4) .memory-visual {
+            background:
+                radial-gradient(circle,#fff,transparent 25%),
+                linear-gradient(145deg,#dab7a2,#b06d7b,#4d2936);
+        }
+
+        .memory-caption {
+            padding: 18px 8px 10px;
+        }
+
+        .memory-caption small {
+            text-transform: uppercase;
+            font-size: 8px;
+            letter-spacing: 2px;
+            color: var(--gold);
+        }
+
+        .memory-caption h3 {
+            font-family: var(--serif);
+            font-size: 25px;
+            margin-top: 4px;
+        }
+
+
+        /* =========================================================
+           LOVE METER
+        ========================================================== */
+
+        .love-section {
+            background: var(--paper);
+            text-align: center;
+        }
+
+        .love-meter-box {
+            max-width: 750px;
+            margin: 60px auto 0;
+            padding: 55px;
+            background: var(--ivory);
+            border: 1px solid rgba(103,47,62,.1);
+        }
+
+        .love-heart {
+            font-size: 70px;
+            color: var(--wine);
+            transition: .3s;
+        }
+
+        .love-score {
+            font-family: var(--serif);
+            font-size: 55px;
+            color: var(--wine-dark);
+            margin-top: 10px;
+        }
+
+        .love-message {
+            color: var(--muted);
+            margin: 10px 0 30px;
+        }
+
+        .love-slider {
+            width: 100%;
+            accent-color: var(--wine);
+            cursor: pointer;
+        }
+
+        .love-button {
+            margin-top: 30px;
+            padding: 14px 25px;
+            background: var(--wine);
+            color: white;
+            border: 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================================
+           VENUE
+        ========================================================== */
+
+        .venue-section {
+            background: var(--cream);
+        }
+
+        .venue-card {
+            margin-top: 60px;
+            background: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 420px;
+            box-shadow: var(--shadow);
+        }
+
+        .venue-map {
+            position: relative;
+            min-height: 420px;
+            background:
+                linear-gradient(
+                    45deg,
+                    rgba(103,47,62,.07) 25%,
+                    transparent 25%
+                ),
+                linear-gradient(
+                    -45deg,
+                    rgba(103,47,62,.05) 25%,
+                    transparent 25%
+                ),
+                #e7ded0;
+            background-size: 70px 70px;
+            overflow: hidden;
+        }
+
+        .map-road {
+            position: absolute;
+            height: 30px;
+            width: 150%;
+            background: rgba(255,255,255,.8);
+            transform: rotate(-20deg);
+            top: 45%;
+            left: -20%;
+        }
+
+        .map-road.two {
+            transform: rotate(65deg);
+            top: 10%;
+            left: 30%;
+        }
+
+        .map-pin {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 65px;
+            height: 65px;
+            border-radius: 50% 50% 50% 0;
+            background: var(--wine);
+            transform: translate(-50%,-50%) rotate(-45deg);
+            box-shadow: 0 15px 30px rgba(103,47,62,.3);
+        }
+
+        .map-pin i {
+            color: white;
+            transform: rotate(45deg);
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .venue-content {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .venue-content h3 {
+            font-family: var(--serif);
+            font-size: 45px;
+            font-weight: 400;
+        }
+
+        .venue-content p {
+            color: var(--muted);
+            line-height: 1.9;
+            margin-top: 20px;
+        }
+
+        .venue-detail {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            margin-top: 30px;
+            font-size: 13px;
+            color: var(--brown);
+        }
+
+        .venue-detail i {
+            color: var(--gold);
+            margin-top: 4px;
+        }
+
+
+        /* =========================================================
+           RSVP / GUESTBOOK
+        ========================================================== */
+
+        .guestbook-section {
+            background: var(--ivory);
+        }
+
+        .guestbook {
+            margin-top: 60px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid rgba(103,47,62,.15);
+            background: white;
+            padding: 17px;
+            outline: none;
+            color: var(--text);
+            transition: .3s;
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(184,138,67,.08);
+        }
+
+        .submit-button {
+            border: 0;
+            background: var(--wine);
+            color: white;
+            padding: 16px 28px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .submit-button:hover {
+            background: var(--gold);
+        }
+
+        .guest-messages {
+            margin-top: 45px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .guest-message {
+            padding: 22px;
+            background: white;
+            border-left: 3px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(60,35,35,.04);
+        }
+
+        .guest-message strong {
+            font-family: var(--serif);
+            font-size: 22px;
+        }
+
+        .guest-message p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+
+        /* =========================================================
+           FAQ
+        ========================================================== */
+
+        .faq-section {
+            background: var(--paper);
+        }
+
+        .faq {
+            max-width: 850px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            border-top: 1px solid rgba(103,47,62,.13);
+        }
+
+        .faq-item:last-child {
+            border-bottom: 1px solid rgba(103,47,62,.13);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            padding: 25px 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            color: var(--wine-dark);
+            text-align: left;
+            font-family: var(--serif);
+            font-size: 25px;
+        }
+
+        .faq-question i {
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 5px 25px;
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================== */
+
+        .final-section {
+            min-height: 600px;
+            background:
+                linear-gradient(
+                    rgba(45,21,29,.83),
+                    rgba(45,21,29,.9)
+                ),
+                url("nikkah.png") center/cover fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .final-content {
+            max-width: 850px;
+        }
+
+        .final-content .section-label {
+            color: var(--gold-light);
+        }
+
+        .final-title {
+            font-family: var(--serif);
+            font-size: clamp(55px, 9vw, 100px);
+            line-height: .85;
+            font-weight: 300;
+        }
+
+        .final-script {
+            font-family: var(--script);
+            color: var(--gold-light);
+            font-size: 50px;
+            margin-top: 25px;
+        }
+
+        .final-date {
+            margin-top: 35px;
+            color: rgba(255,255,255,.65);
+            font-size: 11px;
+            letter-spacing: 4px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        footer {
+            background: #211218;
+            color: white;
+            text-align: center;
+            padding: 60px 20px 35px;
+        }
+
+        .footer-names {
+            font-family: var(--serif);
+            font-size: 42px;
+        }
+
+        .footer-script {
+            font-family: var(--script);
+            color: var(--gold-light);
+            font-size: 35px;
+        }
+
+        .footer-copy {
+            margin-top: 30px;
+            color: rgba(255,255,255,.4);
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================== */
+
+        #backTop {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid rgba(103,47,62,.15);
+            background: white;
+            color: var(--wine);
+            cursor: pointer;
+            z-index: 900;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+        }
+
+        #backTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity .9s ease, transform .9s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           TOAST
+        ========================================================== */
+
+        #toast {
+            position: fixed;
+            left: 50%;
+            bottom: 30px;
+            transform: translate(-50%, 30px);
+            background: var(--wine-dark);
+            color: white;
+            padding: 15px 25px;
+            font-size: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: .4s;
+            z-index: 99999;
+            box-shadow: 0 20px 50px rgba(0,0,0,.2);
+        }
+
+        #toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%,0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 20px;
+                right: 20px;
+                background: rgba(50,25,35,.97);
+                padding: 25px;
+                flex-direction: column;
+                align-items: flex-start;
+                border: 1px solid rgba(255,255,255,.1);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: .3s;
+            }
+
+            .nav-links.open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .passport,
+            .venue-card {
+                grid-template-columns: 1fr;
+            }
+
+            .passport-side {
+                border-left: 0;
+                border-top: 1px dashed rgba(255,255,255,.25);
+            }
+
+            .venue-map {
+                min-height: 320px;
+            }
+
+            .blessing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .memory-wall {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            section {
+                padding: 85px 5%;
+            }
+
+            .gate-card {
+                min-height: 570px;
+            }
+
+            .gate-content {
+                padding: 25px;
+            }
+
+            .gate-names {
+                font-size: 65px;
+            }
+
+            .hero-title {
+                font-size: 78px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
+            .passport-main,
+            .passport-side {
+                padding: 35px 28px;
+            }
+
+            .passport-title {
+                font-size: 45px;
+            }
+
+            .passport-meta {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .countdown {
+                gap: 8px;
+            }
+
+            .time-box {
+                width: 75px;
+                height: 100px;
+            }
+
+            .time-number {
+                font-size: 38px;
+            }
+
+            .time-label {
+                font-size: 7px;
+                letter-spacing: 1px;
+            }
+
+            .event-card {
+                padding: 35px 28px;
+            }
+
+            .event-title {
+                font-size: 38px;
+            }
+
+            .timeline::before {
+                left: 8px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+                text-align: left;
+                padding-left: 35px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 1px;
+                right: auto;
+            }
+
+            .memory-wall {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .memory-visual {
+                height: 170px;
+            }
+
+            .memory-card:nth-child(2),
+            .memory-card:nth-child(4) {
+                margin-top: 25px;
+            }
+
+            .love-meter-box {
+                padding: 35px 20px;
+            }
+
+            .venue-content {
+                padding: 40px 28px;
+            }
+
+            .venue-content h3 {
+                font-size: 38px;
+            }
+
+            .faq-question {
+                font-size: 21px;
+            }
+
+            #backTop {
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="locked">
+
+    <!-- =========================================================
+         LOADER
+    ========================================================== -->
+
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-script">A beautiful beginning...</div>
+        </div>
+    </div>
+
+
+    <!-- =========================================================
+         INVITATION GATE
+    ========================================================== -->
+
+    <div id="invitationGate">
+
+        <div class="particles" id="gateParticles"></div>
+
+        <div class="gate-card">
+
+            <div class="gate-flower one">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="gate-flower two">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="gate-content">
+
+                <div class="gate-small">
+                    Together with their families
+                </div>
+
+                <div class="gate-names">
+                    Saima
+                    <div class="gate-amp">&</div>
+                    Hashim
+                </div>
+
+                <div class="gate-date">
+                    06 November 2026 · Karachi
+                </div>
+
+                <button class="enter-button" id="enterInvitation">
+                    Enter Invitation
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         SCROLL PROGRESS
+    ========================================================== -->
+
+    <div id="scrollProgress"></div>
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+
+    <nav class="navbar" id="navbar">
+
+        <a href="#home" class="nav-logo">
+            S <span>&</span> H
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#story">Story</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#blessings">Blessings</a></li>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#guestbook">RSVP</a></li>
+        </ul>
+
+        <div style="display:flex;align-items:center;gap:12px;">
+
+            <button class="music-button" id="musicButton" title="Music">
+                <i class="fa-solid fa-volume-xmark"></i>
+            </button>
+
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <header class="hero" id="home">
+
+        <div class="particles" id="heroParticles"></div>
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                The beginning of forever
+            </div>
+
+            <h1 class="hero-title">
+                Saima
+                <span class="amp">&</span>
+                Hashim
+            </h1>
+
+            <p class="hero-subtitle">
+                "Two hearts, one beautiful journey."
+            </p>
+
+            <div class="hero-date">
+                <span></span>
+                06 November 2026
+                <span></span>
+            </div>
+
+        </div>
+
+        <div class="scroll-hint">
+            Scroll to discover
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         INTRO
+    ========================================================== -->
+
+    <section class="intro" id="story">
+
+        <div class="section-container intro-content reveal">
+
+            <div class="section-label">
+                Bismillah
+            </div>
+
+            <h2 class="section-title">
+                A new chapter
+            </h2>
+
+            <div class="script-line">
+                begins here...
+            </div>
+
+            <p class="intro-quote">
+                With the blessings of our families, the grace of Allah,
+                and the love of those closest to our hearts, we invite
+                you to celebrate a very special beginning with us.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         WEDDING PASSPORT
+    ========================================================== -->
+
+    <section class="passport-section">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    Your invitation
+                </div>
+
+                <h2 class="section-title">
+                    Your Wedding Passport
+                </h2>
+
+                <p class="section-description">
+                    Keep this little digital passport close. It has
+                    everything you need for our special day.
+                </p>
+
+            </div>
+
+
+            <div class="passport reveal">
+
+                <div class="passport-main">
+
+                    <div class="passport-stamp">
+                        INVITED
+                    </div>
+
+                    <div class="passport-title">
+                        Saima<br>
+                        <span style="color:var(--gold-light);">&</span><br>
+                        Hashim
+                    </div>
+
+                    <div class="passport-meta">
+
+                        <div>
+                            <div class="meta-label">Date</div>
+                            <div class="meta-value">
+                                06 Nov
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="meta-label">City</div>
+                            <div class="meta-value">
+                                Karachi
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="meta-label">Chapter</div>
+                            <div class="meta-value">
+                                Forever
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="meta-label">Dress Code</div>
+                            <div class="meta-value">
+                                Elegant
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="passport-side">
+
+                    <h3>
+                        Your presence<br>
+                        is the gift.
+                    </h3>
+
+                    <p>
+                        We don't need anything except your duas,
+                        smiles and presence as we begin this beautiful
+                        journey together.
+                    </p>
+
+                    <div class="passport-code">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         COUNTDOWN
+    ========================================================== -->
+
+    <section class="countdown-section">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    Counting every moment
+                </div>
+
+                <h2 class="section-title">
+                    Until we say Bismillah
+                </h2>
+
+            </div>
+
+
+            <div class="countdown reveal">
+
+                <div class="time-box">
+                    <div class="time-number" id="days">00</div>
+                    <div class="time-label">Days</div>
+                </div>
+
+                <div class="time-box">
+                    <div class="time-number" id="hours">00</div>
+                    <div class="time-label">Hours</div>
+                </div>
+
+                <div class="time-box">
+                    <div class="time-number" id="minutes">00</div>
+                    <div class="time-label">Minutes</div>
+                </div>
+
+                <div class="time-box">
+                    <div class="time-number" id="seconds">00</div>
+                    <div class="time-label">Seconds</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         EVENTS
+    ========================================================== -->
+
+    <section class="events" id="events">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    Save the date
+                </div>
+
+                <h2 class="section-title">
+                    One day. One beginning.
+                </h2>
+
+            </div>
+
+
+            <div class="events-grid">
+
+                <!-- NIKKAH -->
+
+                <article class="event-card reveal">
+
+                    <div class="event-number">
+                        01 / NIKKAH
+                    </div>
+
+                    <div class="event-icon">
+                        <i class="fa-solid fa-mosque"></i>
+                    </div>
+
+                    <h3 class="event-title">
+                        Nikkah
+                    </h3>
+
+                    <div class="event-date">
+                        Friday · 06 November 2026
+                    </div>
+
+                    <div class="event-info">
+
+                        <div>
+                            <i class="fa-regular fa-clock"></i>
+                            After Namaz-e-Asr
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Masjid Abu-Al-Qasim
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-map-pin"></i>
+                            Karachi, Pakistan
+                        </div>
+
+                    </div>
+
+                    <a
+                        class="direction-btn"
+                        href="https://www.google.com/maps/search/?api=1&query=Masjid+Abu-Al-Qasim+Karachi"
+                        target="_blank"
+                    >
+                        Get Directions
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- RUKHSATI -->
+
+                <article class="event-card reveal">
+
+                    <div class="event-number">
+                        02 / RUKHSATI
+                    </div>
+
+                    <div class="event-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <h3 class="event-title">
+                        Rukhsati
+                    </h3>
+
+                    <div class="event-date">
+                        Friday · 06 November 2026
+                    </div>
+
+                    <div class="event-info">
+
+                        <div>
+                            <i class="fa-regular fa-clock"></i>
+                            9:00 PM Onwards
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Venus Ballroom
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-map-pin"></i>
+                            Block H, North Nazimabad, Karachi
+                        </div>
+
+                    </div>
+
+                    <a
+                        class="direction-btn"
+                        href="https://www.google.com/maps/search/?api=1&query=Venus+Ballroom+Block+H+North+Nazimabad+Karachi"
+                        target="_blank"
+                    >
+                        Get Directions
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         TIMELINE
+    ========================================================== -->
+
+    <section class="timeline-section" id="journey">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    The day in motion
+                </div>
+
+                <h2 class="section-title">
+                    A little timeline
+                </h2>
+
+                <p class="section-description">
+                    From the sacred Nikkah to the final farewell,
+                    every little moment becomes part of the memory.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-time">
+                        After Asr
+                    </div>
+
+                    <div class="timeline-title">
+                        Nikkah
+                    </div>
+
+                    <div class="timeline-text">
+                        The most meaningful words of the day,
+                        surrounded by family and loved ones.
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-time">
+                        After Nikkah
+                    </div>
+
+                    <div class="timeline-title">
+                        Dua & Blessings
+                    </div>
+
+                    <div class="timeline-text">
+                        A beautiful moment for prayers, family
+                        and heartfelt wishes.
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-time">
+                        Evening
+                    </div>
+
+                    <div class="timeline-title">
+                        Family Time
+                    </div>
+
+                    <div class="timeline-text">
+                        Smiles, conversations and precious moments
+                        with family and loved ones.
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-time">
+                        09:00 PM
+                    </div>
+
+                    <div class="timeline-title">
+                        Rukhsati
+                    </div>
+
+                    <div class="timeline-text">
+                        Rukhsati begins at Venus Ballroom,
+                        Block H, North Nazimabad, Karachi.
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-time">
+                        09:00 PM Onwards
+                    </div>
+
+                    <div class="timeline-title">
+                        A New Chapter
+                    </div>
+
+                    <div class="timeline-text">
+                        The beginning of a beautiful lifetime together.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         BLESSINGS
+    ========================================================== -->
+
+    <section class="blessings-section" id="blessings">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    Open with love
+                </div>
+
+                <h2 class="section-title">
+                    Three little blessings
+                </h2>
+
+                <p class="section-description">
+                    Tap a card. Each one holds a small message for
+                    the beginning of this beautiful journey.
+                </p>
+
+            </div>
+
+
+            <div class="blessing-grid">
+
+                <div class="blessing-card reveal">
+
+                    <div class="blessing-front">
+
+                        <div class="blessing-number">
+                            01
+                        </div>
+
+                        <div class="blessing-icon">
+                            <i class="fa-solid fa-hands-praying"></i>
+                        </div>
+
+                        <div class="blessing-title">
+                            A Dua
+                        </div>
+
+                        <div class="blessing-hint">
+                            Tap to open
+                        </div>
+
+                    </div>
+
+                    <div class="blessing-back">
+
+                        <div class="blessing-title">
+                            For their home
+                        </div>
+
+                        <p>
+                            May Allah fill their home with sakinah,
+                            mercy, understanding and endless barakah.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="blessing-card reveal">
+
+                    <div class="blessing-front">
+
+                        <div class="blessing-number">
+                            02
+                        </div>
+
+                        <div class="blessing-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <div class="blessing-title">
+                            A Wish
+                        </div>
+
+                        <div class="blessing-hint">
+                            Tap to open
+                        </div>
+
+                    </div>
+
+                    <div class="blessing-back">
+
+                        <div class="blessing-title">
+                            For their journey
+                        </div>
+
+                        <p>
+                            May every year bring them closer,
+                            every challenge make them stronger,
+                            and every smile become a memory.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="blessing-card reveal">
+
+                    <div class="blessing-front">
+
+                        <div class="blessing-number">
+                            03
+                        </div>
+
+                        <div class="blessing-icon">
+                            <i class="fa-solid fa-star-and-crescent"></i>
+                        </div>
+
+                        <div class="blessing-title">
+                            A Prayer
+                        </div>
+
+                        <div class="blessing-hint">
+                            Tap to open
+                        </div>
+
+                    </div>
+
+                    <div class="blessing-back">
+
+                        <div class="blessing-title">
+                            For forever
+                        </div>
+
+                        <p>
+                            May Allah bless their bond in this world
+                            and reunite them in Jannah.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         MEMORY WALL
+    ========================================================== -->
+
+    <section class="memory-section">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    Little moments
+                </div>
+
+                <h2 class="section-title">
+                    Memories waiting to happen
+                </h2>
+
+                <p class="section-description">
+                    Some photographs are planned. The best ones
+                    simply happen when everyone is together.
+                </p>
+
+            </div>
+
+
+            <div class="memory-wall">
+
+                <div class="memory-card reveal">
+
+                    <div class="memory-visual">
+                        <i class="fa-solid fa-ring"></i>
+                    </div>
+
+                    <div class="memory-caption">
+                        <small>Chapter one</small>
+                        <h3>The Promise</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="memory-card reveal">
+
+                    <div class="memory-visual">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+
+                    <div class="memory-caption">
+                        <small>Chapter two</small>
+                        <h3>The Smiles</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="memory-card reveal">
+
+                    <div class="memory-visual">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+
+                    <div class="memory-caption">
+                        <small>Chapter three</small>
+                        <h3>The Celebration</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="memory-card reveal">
+
+                    <div class="memory-visual">
+                        <i class="fa-solid fa-infinity"></i>
+                    </div>
+
+                    <div class="memory-caption">
+                        <small>Chapter four</small>
+                        <h3>The Forever</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         LOVE METER
+    ========================================================== -->
+
+    <section class="love-section">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    A little interaction
+                </div>
+
+                <h2 class="section-title">
+                    How much joy are you bringing?
+                </h2>
+
+                <p class="section-description">
+                    Slide the meter and leave your virtual dose
+                    of happiness for the couple.
+                </p>
+
+            </div>
+
+
+            <div class="love-meter-box reveal">
+
+                <div class="love-heart" id="loveHeart">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div class="love-score">
+                    <span id="loveScore">75</span>%
+                </div>
+
+                <div class="love-message" id="loveMessage">
+                    That's a beautiful amount of happiness.
+                </div>
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="75"
+                    class="love-slider"
+                    id="loveSlider"
+                >
+
+                <br>
+
+                <button class="love-button" id="sendLove">
+                    Send This Love
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         VENUE
+    ========================================================== -->
+
+    <section class="venue-section" id="venue">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    Find your way
+                </div>
+
+                <h2 class="section-title">
+                    Where the story continues
+                </h2>
+
+            </div>
+
+
+            <div class="venue-card reveal">
+
+                <div class="venue-map">
+
+                    <div class="map-road"></div>
+                    <div class="map-road two"></div>
+
+                    <div class="map-pin">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="venue-content">
+
+                    <div class="section-label">
+                        Rukhsati Venue
+                    </div>
+
+                    <h3>
+                        Venus<br>
+                        Ballroom
+                    </h3>
+
+                    <p>
+                        Join us for the beautiful continuation of this
+                        special day and celebrate the beginning of a
+                        new chapter with family and loved ones.
+                    </p>
+
+                    <div class="venue-detail">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span>
+                            Block H, North Nazimabad, Karachi
+                        </span>
+
+                    </div>
+
+                    <a
+                        class="direction-btn"
+                        href="https://www.google.com/maps/search/?api=1&query=Venus+Ballroom+Block+H+North+Nazimabad+Karachi"
+                        target="_blank"
+                    >
+                        Navigate with Google Maps
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         GUESTBOOK
+    ========================================================== -->
+
+    <section class="guestbook-section" id="guestbook">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    Leave a little love
+                </div>
+
+                <h2 class="section-title">
+                    Guestbook
+                </h2>
+
+                <p class="section-description">
+                    Leave a message, dua or a little memory for
+                    Saima & Hashim.
+                </p>
+
+            </div>
+
+
+            <div class="guestbook reveal">
+
+                <form id="guestbookForm">
+
+                    <div class="form-group">
+
+                        <input
+                            type="text"
+                            id="guestName"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <textarea
+                            id="guestMessage"
+                            placeholder="Write your message or dua..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <button class="submit-button" type="submit">
+                        Add to Guestbook
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                </form>
+
+
+                <div class="guest-messages" id="guestMessages">
+
+                    <div class="guest-message">
+
+                        <strong>
+                            With love
+                        </strong>
+
+                        <p>
+                            May your new chapter be filled with
+                            endless happiness and barakah.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FAQ
+    ========================================================== -->
+
+    <section class="faq-section">
+
+        <div class="section-container">
+
+            <div class="center-heading reveal">
+
+                <div class="section-label">
+                    Before you arrive
+                </div>
+
+                <h2 class="section-title">
+                    Good to know
+                </h2>
+
+            </div>
+
+
+            <div class="faq">
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        Is this event family friendly?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            We kindly request guests to follow the
+                            invitation arrangements shared by the family.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        What should I wear?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Elegant traditional or semi-formal attire
+                            is recommended. Feel free to dress up
+                            and celebrate with us.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        Can I bring a plus one?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Please follow the names and arrangements
+                            mentioned in your personal invitation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        Can I take photographs?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Absolutely. Capture the moments, but please
+                            be respectful during the Nikkah ceremony.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        What if I have dietary requirements?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Please mention your requirements when
+                            confirming your attendance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+                        Where can I find the venue?
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            The venue section above includes a direct
+                            Google Maps button to help you navigate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FINAL
+    ========================================================== -->
+
+    <section class="final-section">
+
+        <div class="final-content reveal">
+
+            <div class="section-label">
+                We cannot wait to see you
+            </div>
+
+            <div class="final-title">
+                Come celebrate
+                <br>
+                with us.
+            </div>
+
+            <div class="final-script">
+                Saima & Hashim
+            </div>
+
+            <div class="final-date">
+                06 NOVEMBER 2026 · KARACHI
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="footer-names">
+            Saima <span style="color:var(--gold-light);">&</span> Hashim
+        </div>
+
+        <div class="footer-script">
+            With love, always.
+        </div>
+
+        <div class="footer-copy">
+            Made with love for a beautiful beginning
+            <br><br>
+            © 2026 Saima & Hashim
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         BACK TO TOP
+    ========================================================== -->
+
+    <button id="backTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- =========================================================
+         TOAST
+    ========================================================== -->
+
+    <div id="toast"></div>
+
+
+    <!-- =========================================================
+         AUDIO
+    ========================================================== -->
+
+    <audio id="weddingMusic" loop preload="auto">
+        <source src="wedding-music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =======================================================
+           LOADER
+        ======================================================= */
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+
+                document.getElementById("loader")
+                    .classList.add("hide");
+
+            }, 800);
+
+        });
+
+
+        /* =======================================================
+           INVITATION GATE
+        ======================================================= */
+
+        const invitationGate =
+            document.getElementById("invitationGate");
+
+        const enterInvitation =
+            document.getElementById("enterInvitation");
+
+        enterInvitation.addEventListener("click", () => {
+
+            invitationGate.classList.add("open");
+
+            document.body.classList.remove("locked");
+
+            startMusic();
+
+        });
+
+
+        /* =======================================================
+           PARTICLES
+        ======================================================= */
+
+        function createParticles(containerId, count) {
+
+            const container =
+                document.getElementById(containerId);
+
+            if (!container) return;
+
+            for (let i = 0; i < count; i++) {
+
+                const particle =
+                    document.createElement("span");
+
+                particle.className = "particle";
+
+                particle.style.left =
+                    Math.random() * 100 + "%";
+
+                particle.style.animationDuration =
+                    (8 + Math.random() * 12) + "s";
+
+                particle.style.animationDelay =
+                    Math.random() * 10 + "s";
+
+                particle.style.opacity =
+                    (0.15 + Math.random() * 0.5);
+
+                particle.style.transform =
+                    `scale(${0.5 + Math.random()})`;
+
+                container.appendChild(particle);
+
+            }
+
+        }
+
+        createParticles("gateParticles", 30);
+        createParticles("heroParticles", 22);
+
+
+        /* =======================================================
+           MUSIC
+        ======================================================= */
+
+        const music =
+            document.getElementById("weddingMusic");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+        let musicPlaying = false;
+
+        function startMusic() {
+
+            music.volume = 0.35;
+
+            music.play()
+                .then(() => {
+
+                    musicPlaying = true;
+
+                    musicButton.innerHTML =
+                        '<i class="fa-solid fa-volume-high"></i>';
+
+                })
+                .catch(() => {
+
+                    musicPlaying = false;
+
+                });
+
+        }
+
+        musicButton.addEventListener("click", () => {
+
+            if (musicPlaying) {
+
+                music.pause();
+
+                musicPlaying = false;
+
+                musicButton.innerHTML =
+                    '<i class="fa-solid fa-volume-xmark"></i>';
+
+            } else {
+
+                music.play();
+
+                musicPlaying = true;
+
+                musicButton.innerHTML =
+                    '<i class="fa-solid fa-volume-high"></i>';
+
+            }
+
+        });
+
+
+        /* =======================================================
+           MOBILE MENU
+        ======================================================= */
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        mobileMenu.addEventListener("click", () => {
+
+            navLinks.classList.toggle("open");
+
+        });
+
+        document.querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("open");
+
+                });
+
+            });
+
+
+        /* =======================================================
+           NAVBAR
+        ======================================================= */
+
+        const navbar =
+            document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 70) {
+
+                navbar.classList.add("scrolled");
+
+            } else {
+
+                navbar.classList.remove("scrolled");
+
+            }
+
+        });
+
+
+        /* =======================================================
+           SCROLL PROGRESS
+        ======================================================= */
+
+        window.addEventListener("scroll", () => {
+
+            const scrollTop =
+                window.scrollY;
+
+            const documentHeight =
+                document.documentElement.scrollHeight -
+                window.innerHeight;
+
+            const percentage =
+                (scrollTop / documentHeight) * 100;
+
+            document.getElementById("scrollProgress")
+                .style.width = percentage + "%";
+
+        });
+
+
+        /* =======================================================
+           COUNTDOWN
+        ======================================================= */
+
+        const weddingDate =
+            new Date("November 6, 2026 16:00:00").getTime();
+
+        function updateCountdown() {
+
+            const now =
+                new Date().getTime();
+
+            const distance =
+                weddingDate - now;
+
+            if (distance <= 0) {
+
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
+
+                return;
+
+            }
+
+            const days =
+                Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            const hours =
+                Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) /
+                    (1000 * 60 * 60)
+                );
+
+            const minutes =
+                Math.floor(
+                    (distance % (1000 * 60 * 60)) /
+                    (1000 * 60)
+                );
+
+            const seconds =
+                Math.floor(
+                    (distance % (1000 * 60)) /
+                    1000
+                );
+
+            document.getElementById("days").textContent =
+                String(days).padStart(2, "0");
+
+            document.getElementById("hours").textContent =
+                String(hours).padStart(2, "0");
+
+            document.getElementById("minutes").textContent =
+                String(minutes).padStart(2, "0");
+
+            document.getElementById("seconds").textContent =
+                String(seconds).padStart(2, "0");
+
+        }
+
+        updateCountdown();
+
+        setInterval(updateCountdown, 1000);
+
+
+        /* =======================================================
+           REVEAL ON SCROLL
+        ======================================================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+        /* =======================================================
+           TIMELINE
+        ======================================================= */
+
+        const timelineItems =
+            document.querySelectorAll(".timeline-item");
+
+        const timelineObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            timelineObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.2
+                }
+            );
+
+        timelineItems.forEach(item => {
+
+            timelineObserver.observe(item);
+
+        });
+
+
+        /* =======================================================
+           BLESSING CARDS
+        ======================================================= */
+
+        document.querySelectorAll(".blessing-card")
+            .forEach(card => {
+
+                card.addEventListener("click", () => {
+
+                    card.classList.toggle("open");
+
+                });
+
+            });
+
+
+        /* =======================================================
+           LOVE METER
+        ======================================================= */
+
+        const loveSlider =
+            document.getElementById("loveSlider");
+
+        const loveScore =
+            document.getElementById("loveScore");
+
+        const loveHeart =
+            document.getElementById("loveHeart");
+
+        const loveMessage =
+            document.getElementById("loveMessage");
+
+        function updateLoveMeter() {
+
+            const value =
+                Number(loveSlider.value);
+
+            loveScore.textContent = value;
+
+            const scale =
+                0.8 + (value / 100) * 0.8;
+
+            loveHeart.style.transform =
+                `scale(${scale})`;
+
+            if (value < 25) {
+
+                loveMessage.textContent =
+                    "A little love is still love.";
+
+            } else if (value < 50) {
+
+                loveMessage.textContent =
+                    "The happiness is growing.";
+
+            } else if (value < 75) {
+
+                loveMessage.textContent =
+                    "Now that's a lovely amount of joy.";
+
+            } else if (value < 95) {
+
+                loveMessage.textContent =
+                    "That's a beautiful amount of happiness.";
+
+            } else {
+
+                loveMessage.textContent =
+                    "Okay... THAT is wedding-level happiness!";
+
+            }
+
+        }
+
+        loveSlider.addEventListener(
+            "input",
+            updateLoveMeter
+        );
+
+
+        document.getElementById("sendLove")
+            .addEventListener("click", () => {
+
+                showToast(
+                    "Your love & duas have been sent ❤️"
+                );
+
+            });
+
+
+        /* =======================================================
+           FAQ
+        ======================================================= */
+
+        document.querySelectorAll(".faq-question")
+            .forEach(button => {
+
+                button.addEventListener("click", () => {
+
+                    const item =
+                        button.parentElement;
+
+                    const answer =
+                        item.querySelector(".faq-answer");
+
+                    const currentlyActive =
+                        item.classList.contains("active");
+
+                    document.querySelectorAll(".faq-item")
+                        .forEach(other => {
+
+                            other.classList.remove("active");
+
+                            other.querySelector(".faq-answer")
+                                .style.maxHeight = null;
+
+                        });
+
+                    if (!currentlyActive) {
+
+                        item.classList.add("active");
+
+                        answer.style.maxHeight =
+                            answer.scrollHeight + "px";
+
+                    }
+
+                });
+
+            });
+
+
+        /* =======================================================
+           GUESTBOOK
+        ======================================================= */
+
+        const guestbookForm =
+            document.getElementById("guestbookForm");
+
+        const guestMessages =
+            document.getElementById("guestMessages");
+
+        guestbookForm.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("guestName")
+                        .value.trim();
+
+                const message =
+                    document.getElementById("guestMessage")
+                        .value.trim();
+
+                if (!name || !message) return;
+
+                const card =
+                    document.createElement("div");
+
+                card.className = "guest-message";
+
+                card.innerHTML = `
+                    <strong>${escapeHTML(name)}</strong>
+                    <p>${escapeHTML(message)}</p>
+                `;
+
+                guestMessages.prepend(card);
+
+                guestbookForm.reset();
+
+                showToast(
+                    "Your beautiful message has been added ❤️"
+                );
+
+            }
+        );
+
+
+        function escapeHTML(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent = text;
+
+            return div.innerHTML;
+
+        }
+
+
+        /* =======================================================
+           TOAST
+        ======================================================= */
+
+        const toast =
+            document.getElementById("toast");
+
+        let toastTimer;
+
+        function showToast(message) {
+
+            toast.textContent = message;
+
+            toast.classList.add("show");
+
+            clearTimeout(toastTimer);
+
+            toastTimer =
+                setTimeout(() => {
+
+                    toast.classList.remove("show");
+
+                }, 3000);
+
+        }
+
+
+        /* =======================================================
+           BACK TO TOP
+        ======================================================= */
+
+        const backTop =
+            document.getElementById("backTop");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 500) {
+
+                backTop.classList.add("show");
+
+            } else {
+
+                backTop.classList.remove("show");
+
+            }
+
+        });
+
+        backTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+
+        /* =======================================================
+           SMALL PARALLAX EFFECT
+        ======================================================= */
+
+        const hero =
+            document.querySelector(".hero");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.innerWidth > 700) {
+
+                const y =
+                    window.scrollY * 0.15;
+
+                hero.style.backgroundPosition =
+                    `center calc(50% + ${y}px)`;
+
+            }
+
+        });
+
+
+        /* =======================================================
+           KEYBOARD ESCAPE
+        ======================================================= */
+
+        document.addEventListener("keydown", event => {
+
+            if (event.key === "Escape") {
+
+                navLinks.classList.remove("open");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
